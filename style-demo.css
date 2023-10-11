@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+.titre-site {
+    font-size: 3.3rem;
+}
+
+/* Styles de la démontration */
+
+/* Entete  titre et slogan doivent faire un mouvement de haut en bas une fois*/
+
+.entete {
+    animation: floating 1s linear;
+
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0%, 0%);
+    }
+
+    50% {
+        transform: translate(0%, -20%);
+    }
+
+    100% {
+        transform: translate(0%, 20%);
+    }
+}
+
+
+/* menu responsive avec flexbox */
+.menu {
+    background-color: #AA9FA1;
+    text-align: center;
+}
+
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3px;
+    background-color: #AA9FA1;
+}
+
+.navigation li {
+    flex: 1;
+}
+
+.navigation a {
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.navigation li {
+
+    flex: 100%;
+    list-style-type: none;
+    border-color: #ffffff 3px solid;
+
+
+
+}
+
+/* media queries de la navigation */
+
+@media screen and (max-width: 768px) {
+
+
+    .navigation {
+
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3px;
+
+    }
+
+
+}
+
+
+/* grille responsive sans utiliser les medias queries */
+
+
+.grille {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.boite {
+    flex: 49%;
+    margin: 0;
+}
+
+.boite:nth-child(1),
+.boite:nth-child(2),
+.boite:nth-child(3) {
+    flex: 30%;
+}
+
+.boite:nth-child(4){
+    flex: 60%;
+}
+
+.boite:nth-child(5){
+    flex: 30%;
+}
+
+.boite:nth-child(6),.boite:nth-child(7),.boite:nth-child(8){
+    flex: 30%;
+}
+
+/* assurer le support pour les navigateurs plus anciens */
+
+@supports (grid-area:auto) {
+    .grille {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .boite {
+        flex: 49%;
+        margin: 0;
+    }
+    
+    .boite:nth-child(1),
+    .boite:nth-child(2),
+    .boite:nth-child(3) {
+        flex: 30%;
+    }
+    
+    .boite:nth-child(4){
+        flex: 60%;
+    }
+    
+    .boite:nth-child(5){
+        flex: 30%;
+    }
+    
+    .boite:nth-child(6),.boite:nth-child(7),.boite:nth-child(8){
+        flex: 30%;
+    }
+  }
+  
